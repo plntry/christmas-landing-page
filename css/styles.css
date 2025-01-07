@@ -10,6 +10,7 @@ html,
 body {
   font-family: "Poppins", sans-serif;
   font-size: var(--font-size-normal);
+  background-color: var(--body-color);
   color: var(--text-color);
   line-height: 1.6;
   scroll-behavior: smooth;
@@ -17,18 +18,24 @@ body {
 
 h1 {
   font-size: var(--font-size-h1);
+  color: var(--title-color);
+  font-weight: 600;
+  line-height: 140%;
 }
 
 h2 {
   font-size: var(--font-size-h2);
+  color: var(--title-color);
 }
 
 h3 {
   font-size: var(--font-size-h3);
+  color: var(--title-color);
 }
 
 h4 {
   font-size: var(--font-size-normal);
+  color: var(--title-color);
 }
 
 a {
@@ -48,10 +55,11 @@ svg {
   height: 20px;
 }
 
+/* Utility Classes */
 .container {
-  max-width: 1280px;
+  max-width: 1016px;
   margin: 0 auto;
-  background-color: #ecf1dc;
+  /* background-color: #ecf1dc; */
 }
 
 .container-sm {
@@ -59,9 +67,26 @@ svg {
   margin: 0 auto;
 }
 
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 1.25rem 3.5rem;
+  width: fit-content;
+  background-color: var(--primary-color);
+  color: var(--text-white);
+  font-weight: 500;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4rem;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
 /* Navbar */
 .navbar {
-  background: rgb(252, 206, 206);
+  /* background: rgb(252, 206, 206); */
   color: white;
   font-weight: 500;
   padding: 1.5rem 1.5rem;
@@ -73,7 +98,7 @@ svg {
   /* transition */
 }
 
-.navbar-flex {
+.navbar .navbar-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -118,6 +143,38 @@ svg {
   display: none;
 }
 
+/* Hero */
+.hero {
+  /* background: #e9bbbf; */
+  padding: 8.5rem 0rem 0rem;
+}
+
+.hero .hero-flex {
+  display: flex;
+  gap: 18px;
+}
+
+.hero img {
+  max-width: 500px;
+}
+
+.hero p {
+  max-width: 380px;
+}
+
+.hero .hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 78px;
+}
+
+.hero .hero-content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 :root {
   /* Primary */
   --primary-color: #dc3845;
@@ -132,6 +189,8 @@ svg {
   --dark-theme-container-color: #2f2223;
 
   /* Text color */
+  --text-white: #ffffff;
+
   --title-color: #282525;
   --text-color: #5d5656;
   --text-color-light: #918889;
@@ -141,12 +200,19 @@ svg {
   --dark-theme-text-color-light: #918889;
 
   /* Text size */
-  --font-size-h1: 2.25rem;
+  --font-size-h1: 2.5rem;
   --font-size-h2: 1.5rem;
   --font-size-h3: 1.25rem;
   --font-size-normal: 1rem;
   --font-size-small: 0.875rem;
   --font-size-smaller: 0.813rem;
+
+  --mobile-font-size-h1: 1.5rem;
+  --mobile-font-size-h2: 1.25rem;
+  --mobile-font-size-h3: 1rem;
+  --mobile-font-size-normal: 0.938rem;
+  --mobile-font-size-small: 0.813rem;
+  --mobile-font-size-smaller: 0.75rem;
 }
 
 /* Media Queries */
@@ -154,9 +220,34 @@ svg {
 }
 
 @media (max-width: 992px) {
+  /* Hero */
+  .hero {
+    text-align: center;
+  }
+
+  .hero .hero-flex {
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero .hero-content {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .hero .hero-content-text {
+    justify-content: center;
+    align-items: center;
+    max-width: 85%;
+  }
 }
 
 @media (max-width: 768px) {
+  /* Navbar */
   .navbar {
     padding: 1rem 1.5rem; /* TODO: check */
   }
@@ -175,10 +266,34 @@ svg {
     gap: 1rem;
   }
 
+  /* Mobile Menu */
   .mobile-menu-toggle {
     display: block;
+  }
+
+  /* Hero */
+  .hero .hero-flex {
+
   }
 }
 
 @media (max-width: 576px) {
+  :root {
+    /* Text size */
+    --font-size-h1: var(--mobile-font-size-h1);
+    --font-size-h2: var(--mobile-font-size-h2);
+    --font-size-h3: var(--mobile-font-size-h3);
+    --font-size-normal: var(--mobile-font-size-normal);
+    --font-size-small: var(--mobile-font-size-small);
+    --font-size-smaller: var(--mobile-font-size-smaller);
+  }
+
+  /* Hero */
+  .hero img {
+    max-width: 320px;
+  }
+
+  .hero .hero-content-text {
+    max-width: 80%;
+  }
 }
