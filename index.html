@@ -61,11 +61,16 @@
       <!-- Mobile Menu -->
       <div class="mobile-menu">
         <div class="mobile-menu-items">
-          <img src="images/mobile-menu-lights.png" alt="Mobile Menu Lights">
-          <ul
-            class="mobile-menu-list"
-            aria-label="Mobile Menu Items"
-          >
+          <img src="images/mobile-menu-lights.png" alt="Mobile Menu Lights" />
+          <button class="mobile-menu-close-btn" aria-label="Close Mobile Menu Button">
+            <svg xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10.192 0.343994L5.949 4.58599L1.707 0.343994L0.292999 1.75799L4.535 5.99999L0.292999 10.242L1.707 11.656L5.949 7.41399L10.192 11.656L11.606 10.242L7.364 5.99999L11.606 1.75799L10.192 0.343994Z"
+                fill="#282525"
+              />
+            </svg>
+          </button>
+          <ul class="mobile-menu-list" aria-label="Mobile Menu Items">
             <li class="mobile-menu-list-item active">
               <a href="#">Home</a>
             </li>
@@ -79,15 +84,10 @@
               <a href="#">New</a>
             </li>
           </ul>
-          <!-- Close Button -->
-           <button class="mobile-menu-close-btn">
-            <svg xmlns="http://www.w3.org/2000/svg">
-              <path d="M10.192 0.343994L5.949 4.58599L1.707 0.343994L0.292999 1.75799L4.535 5.99999L0.292999 10.242L1.707 11.656L5.949 7.41399L10.192 11.656L11.606 10.242L7.364 5.99999L11.606 1.75799L10.192 0.343994Z" fill="#282525"/>
-            </svg>  
-           </button>
         </div>
       </div>
     </nav>
+    
     <main>
       <header class="hero">
         <div class="hero-flex container">
@@ -100,10 +100,48 @@
                 successes.
               </p>
             </div>
-            <a type="button" class="btn">Get Started</a>
+            <a type="button" role="button" class="btn">Get Started</a>
           </div>
         </div>
       </header>
+
+      <!-- Start Giving Section -->
+      <section class="start-giving">
+        <div class="container">
+          <div class="section-header">
+            <h2>Start Giving This Christmas</h2>
+          </div>
+          <div class="givings">
+            <div class="giving">
+              <div class="giving-image">
+                <img src="images/giving1.png" alt="Gift">
+              </div>
+              <div class="giving-text">
+                <h3>Surprise gifts</h3>
+                <p>They are the best gifts there is.</p>
+              </div>
+            </div>
+            <div class="giving">
+              <div class="giving-image">
+                <img src="images/giving2.png" alt="Bells">
+              </div>
+              <div class="giving-text">
+                <h3>Ornaments</h3>
+                <p>Give a moment to decorate</p>
+              </div>
+            </div>
+            <div class="giving">
+              <div class="giving-image">
+                <img src="images/giving3.png" alt="Christmas Stocking">
+              </div>
+              <div class="giving-text">
+                <h3>Lots of love</h3>
+                <p>Give away feelings that last forever</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script src="js/script.js"></script>
