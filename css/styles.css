@@ -55,6 +55,14 @@ svg {
   height: 20px;
 }
 
+button {
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
 /* Utility Classes */
 .container {
   max-width: 1016px;
@@ -125,7 +133,8 @@ svg {
   color: var(--title-color);
 }
 
-.navbar .main-menu-list-item.active a {
+.navbar .main-menu-list-item.active a,
+.navbar .mobile-menu-list-item.active a {
   color: var(--primary-color);
 }
 
@@ -151,6 +160,17 @@ svg {
   top: 0;
   left: 0;
   max-width: 100px;
+}
+.navbar .mobile-menu button {
+  position: absolute;
+  top: 24.34px;
+  right: 30.39px;
+  cursor: pointer;
+}
+
+.navbar .mobile-menu svg {
+  width: 11.31px;
+  height: 11.31px;
 }
 
 .navbar .mobile-menu-items {
