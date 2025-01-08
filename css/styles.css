@@ -105,14 +105,43 @@ main {
 /* Section Header */
 .section-header {
   max-width: 235px;
-  /* width: fit-content; */
   text-align: center;
   margin: 4.5rem auto 3.375rem;
 }
 
-/* .section-header h2 {
-  max-width: 235px;
-} */
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  width: fit-content;
+  justify-self: center;
+}
+
+.cards .card {
+  display: flex;
+  flex-direction: column;
+  /* text-align: center; */
+  background: var(--container-color);
+  box-shadow: var(--box-shadow-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.card img {
+  max-width: 120px;
+}
+
+.card p {
+  font-size: var(--font-size-small);
+}
+
+.card .card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 
 /* Navbar */
 .navbar {
@@ -264,37 +293,24 @@ main {
 
 /* Start Giving */
 .givings {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 8rem;
   width: fit-content;
   justify-self: center;
 }
 
-.giving {
-  display: flex;
-  flex-direction: column;
+.givings .giving {
+  cursor: pointer;
+  background: transparent;
   text-align: center;
   max-width: 142px;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+  transition: transform 0.3s ease;
 }
 
-.giving img {
-  max-width: 120px;
-  /* transition: transform 0.3s; */
-}
-/* 
-.giving:hover {
+.givings .giving:hover {
   transform: scale(1.1);
-} */
-
-.giving p {
-  font-size: var(--font-size-small);
-}
-
-.giving .giving-text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
 }
 
 /* Send Wishes */
@@ -334,6 +350,17 @@ main {
 
 .send-wishes .btn {
   padding: 16px 32px;
+}
+
+/* Share A Gift */
+.gifts .gift {
+  padding: 2rem 1.5rem 1.5rem;
+  min-width: 200px;
+  text-align: center;
+}
+
+.gift .gift-content {
+  text-align: start;
 }
 
 :root {
@@ -379,6 +406,7 @@ main {
   /* Box-shadow */
   --box-shadow-default: 0px 4px 8px -8px rgba(0, 0, 0, 0.75);
   --box-shadow-btn: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --box-shadow-card: 0px 4px 24px rgba(48, 29, 30, 0.1);
 }
 
 /* Media Queries */
@@ -433,6 +461,12 @@ main {
 }
 
 @media (max-width: 768px) {
+  /* Cards */
+  .cards {
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   /* Navbar */
   .navbar {
     padding: 1rem 1.5rem; /* TODO: check */
@@ -473,6 +507,11 @@ main {
 }
 
 @media (max-width: 576px) {
+  /* Cards */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
   /* Hero */
   .hero img {
     max-width: 320px;
@@ -495,5 +534,29 @@ main {
   /* Start Giving */
   .givings {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Share A Gift */
+  .gifts .gift {
+    min-width: 144px;
+    padding: 24px 22px 16px 22px;
+  }
+  
+  .gifts img {
+    width: 100px;
+  }
+
+  .gift h3 {
+    font-size: 16px;
+  }
+  
+  .gift p {
+    font-size: var(--font-size-small);
+  }
+  
+  .gift .gift-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
 }
