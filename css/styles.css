@@ -69,6 +69,10 @@ button {
   cursor: pointer;
 }
 
+[type="radio"] {
+  display: none;
+}
+
 main {
   margin: 0 1.5rem;
 }
@@ -77,6 +81,7 @@ main {
 .container {
   max-width: 1016px;
   margin: 0 auto;
+  padding-bottom: 2rem;
 }
 
 .container-sm {
@@ -157,6 +162,10 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.navbar .container {
+  padding: 0;
 }
 
 .navbar.navbar-scroll {
@@ -353,6 +362,7 @@ main {
   padding: 2rem 1.5rem 1.5rem;
   min-width: 200px;
   text-align: center;
+  white-space: nowrap;
   position: relative;
 }
 
@@ -369,6 +379,8 @@ main {
 }
 
 .gift .gift-like i {
+  width: 20px;
+  height: 20px;
   color: var(--primary-color);
   transition: opacity 0.3s ease;
 }
@@ -401,6 +413,203 @@ main {
   opacity: 0;
 }
 
+/* New Gifts Slider */
+#new-gifts-slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #251819;
+}
+
+#new-gifts-slider > label {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.new-gifts-slider > .container {
+  height: 510px;
+  overflow: hidden;
+}
+
+.new-gifts .new-gift {
+  position: relative;
+  max-height: 278px;
+  width: 230px;
+  padding: 20px;
+  overflow: hidden;
+  gap: 20px;
+}
+
+.new-gift p {
+  font-size: 15px;
+}
+
+.new-gift .new-gift-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-gift .new-gift-image img {
+  max-width: 150px;
+  z-index: 2;
+}
+
+.new-gift .new-gift-img-background {
+  position: absolute;
+  top: -26%;
+  width: 250px;
+  height: 250px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.new-gift .new-gift-content {
+  text-align: center;
+}
+
+#s1:checked ~ #slide4,
+#s2:checked ~ #slide1,
+#s3:checked ~ #slide2,
+#s4:checked ~ #slide3 {
+  transform: translateX(-120%);
+}
+
+#s1:checked ~ #slide3,
+#s2:checked ~ #slide4,
+#s3:checked ~ #slide1,
+#s4:checked ~ #slide2 {
+  transform: translateX(-120%);
+}
+
+#s1:checked ~ #slide1,
+#s2:checked ~ #slide2,
+#s3:checked ~ #slide3,
+#s4:checked ~ #slide4 {
+  transform: translateX(0%);
+}
+
+#s1:checked ~ #slide2,
+#s2:checked ~ #slide3,
+#s3:checked ~ #slide4,
+#s4:checked ~ #slide1 {
+  transform: translateX(120%);
+}
+
+#s1:checked ~ #slide3,
+#s2:checked ~ #slide4,
+#s3:checked ~ #slide1,
+#s4:checked ~ #slide2 {
+  transform: translateX(240%);
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* Dots Navigation */
+.dots-navigation {
+  position: absolute;
+  bottom: -320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+#new-gifts-slider .dots-navigation label {
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.dots-navigation .dot {
+  width: 3px;
+  height: 3px;
+  background-color: var(--dot-color);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Active 1st dot */
+#s1:checked ~ .dots-navigation .dot:nth-child(1) {
+  width: 7px;
+  height: 7px;
+  background-color: var(--dot-active-color);
+}
+
+#s1:checked ~ .dots-navigation .dot:nth-child(2) {
+  width: 5px;
+  height: 5px;
+}
+
+#s1:checked ~ .dots-navigation .dot:nth-child(3) {
+  width: 3px;
+  height: 3px;
+}
+
+/* Active 2nd dot */
+#s2:checked ~ .dots-navigation .dot:nth-child(1),
+#s3:checked ~ .dots-navigation .dot:nth-child(1) {
+  width: 5px;
+  height: 5px;
+}
+
+#s2:checked ~ .dots-navigation .dot:nth-child(2),
+#s3:checked ~ .dots-navigation .dot:nth-child(2) {
+  width: 7px;
+  height: 7px;
+  background-color: var(--dot-active-color);
+}
+
+#s2:checked ~ .dots-navigation .dot:nth-child(3),
+#s3:checked ~ .dots-navigation .dot:nth-child(3) {
+  width: 5px;
+  height: 5px;
+}
+
+/* Active 3rd dot */
+#s4:checked ~ .dots-navigation .dot:nth-child(1) {
+  width: 3px;
+  height: 3px;
+}
+
+#s4:checked ~ .dots-navigation .dot:nth-child(2) {
+  width: 5px;
+  height: 5px;
+}
+
+#s4:checked ~ .dots-navigation .dot:nth-child(3) {
+  width: 7px;
+  height: 7px;
+  background-color: var(--dot-active-color);
+}
+
+/* New Gift Like */
+.new-gift-like {
+  position: absolute;
+  bottom: 6%;
+  right: 7%;
+}
+
+.new-gift-like .new-gift-disliked,
+.new-gift-like .new-gift-liked {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-gift .gift-like i {
+  width: 20px;
+  height: 20px;
+  padding: 16px;
+  border-radius: 4px;
+  color: var(--text-white);
+  background-color: var(--primary-color);
+  transition: opacity 0.3s ease;
+}
+
 :root {
   /* Primary color */
   --primary-color: #dc3845;
@@ -426,6 +635,10 @@ main {
   --dark-theme-text-color: #c2bdbd;
   --dark-theme-text-color-light: #918889;
 
+  /* Slider Dots */
+  --dot-color: rgba(93, 86, 86, 0.5);
+  --dot-active-color: #dc3845;
+
   /* Text size */
   --font-size-h1: 2.5rem;
   --font-size-h2: 1.5rem;
@@ -448,9 +661,6 @@ main {
 }
 
 /* Media Queries */
-@media (max-width: 1200px) {
-}
-
 @media (max-width: 992px) {
   /* Hero */
   .hero {
@@ -547,7 +757,7 @@ main {
 @media (max-width: 576px) {
   /* Section Header */
   .section-header {
-    margin: 48px auto;
+    margin: 3rem auto;
   }
 
   /* Cards */
@@ -580,6 +790,10 @@ main {
   }
 
   /* Share A Gift */
+  .gifts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .gifts .gift {
     min-width: 144px;
     padding: 24px 22px 16px 22px;
@@ -603,9 +817,42 @@ main {
     gap: 4px;
   }
 
-  /* Gift Like */
-  .gift .gift-like i {
-    width: 20px;
-    height: 20px;
+  /* New Gifts Slider */
+  #s1:checked ~ #slide4,
+  #s2:checked ~ #slide1,
+  #s3:checked ~ #slide2,
+  #s4:checked ~ #slide3 {
+    transform: translateX(-110%);
+  }
+
+  #s1:checked ~ #slide3,
+  #s2:checked ~ #slide4,
+  #s3:checked ~ #slide1,
+  #s4:checked ~ #slide2 {
+    transform: translateX(-110%);
+  }
+
+  #s1:checked ~ #slide1,
+  #s2:checked ~ #slide2,
+  #s3:checked ~ #slide3,
+  #s4:checked ~ #slide4 {
+    transform: translateX(0%);
+  }
+
+  #s1:checked ~ #slide2,
+  #s2:checked ~ #slide3,
+  #s3:checked ~ #slide4,
+  #s4:checked ~ #slide1 {
+    transform: translateX(110%);
+  }
+
+  #s1:checked ~ #slide3,
+  #s2:checked ~ #slide4,
+  #s3:checked ~ #slide1,
+  #s4:checked ~ #slide2 {
+    transform: translateX(230%);
+    visibility: hidden;
+    width: 0;
+    height: 0;
   }
 }
