@@ -3,8 +3,8 @@ function toggleMobileMenu() {
   mobileMenu.classList.toggle("active");
 }
 
-// toggle mobile menu
 document.addEventListener("DOMContentLoaded", function () {
+  // toggle mobile menu
   const navbarToggleButton = document.querySelector(
     ".navbar .mobile-menu-toggle"
   );
@@ -14,10 +14,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   navbarToggleButton.addEventListener("click", () => toggleMobileMenu());
   mobileMenuCloseButton.addEventListener("click", () => toggleMobileMenu());
+
+  // toggle like icon
+  const giftLikes = document.querySelectorAll(".gift-like");
+
+  giftLikes.forEach((giftLike) => {
+    giftLike.addEventListener("click", () => {
+      giftLike.classList.toggle("liked");
+    });
+  });
 });
 
 // change navbar background on scroll
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", () => {
   const navbar = document.querySelector(".navbar");
 
   if (window.scrollY > 0) {
