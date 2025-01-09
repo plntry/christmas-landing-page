@@ -768,7 +768,7 @@ main {
 .christmas-bubble:last-of-type {
   bottom: 130px;
   right: 0;
-  background-color: green;
+  /* background-color: green; */
 }
 
 :root {
