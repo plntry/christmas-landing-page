@@ -90,11 +90,6 @@ main {
   padding-bottom: 2rem;
 }
 
-.container-sm {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
 .btn {
   cursor: pointer;
   display: inline-block;
@@ -688,10 +683,13 @@ main {
 }
 
 /* Footer */
-.footer {
-  position: relative;
-}
 .footer .footer-flex {
+  position: relative;
+  padding: 0 100px 2rem;
+  overflow: hidden;
+}
+
+.footer .footer-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -761,14 +759,12 @@ main {
 
 .christmas-bubble:first-of-type {
   bottom: 57px;
-  left: calc(100px);
-  background-color: pink;
+  left: 100px;
 }
 
 .christmas-bubble:last-of-type {
   bottom: 130px;
   right: 0;
-  /* background-color: green; */
 }
 
 :root {
@@ -880,6 +876,42 @@ main {
   .send-wishes-form img {
     max-width: 200px;
   }
+
+  /* Footer */
+  .footer .footer-flex {
+    padding: 0 0 2rem;
+  }
+
+  .footer .footer-content {
+    padding-top: 48px;
+  }
+
+  .footer .footer-cols {
+    flex-wrap: wrap;
+    gap: 41px;
+  }
+
+  .footer .footer-col {
+    gap: 1rem;
+  }
+
+  .footer .footer-col p {
+    max-width: 133px;
+  }
+
+  .footer .logo span {
+    font-weight: 500;
+  }
+
+  .footer .footer-col-links {
+    gap: 12px;
+  }
+
+  /* Christmas Bubbles */
+  .christmas-bubble:last-of-type {
+    bottom: 3%;
+    right: -6%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -961,6 +993,21 @@ main {
 
   .send-wishes-form img {
     max-width: 200px;
+  }
+
+  /* Christmas Bubbles */
+  .christmas-bubble {
+    width: 100px;
+  }
+  
+  .christmas-bubble:first-of-type {
+    bottom: 183px;
+    left: calc(100% - 280px);
+  }
+  
+  .christmas-bubble:last-of-type {
+    bottom: 3%;
+    right: -6%;
   }
 }
 
@@ -1054,5 +1101,24 @@ main {
   #s3:checked ~ #slide1,
   #s4:checked ~ #slide2 {
     transform: translateX(230%);
+  }
+
+  /* Christmas Bubbles */
+  .christmas-bubble:first-of-type {
+    bottom: 310px;
+    left: calc(100% - 280px);
+  }
+}
+
+@media (max-width: 386px) {
+  /* Christmas Bubbles */  
+  .christmas-bubble:first-of-type {
+    bottom: 510px;
+    left: calc(100% - 151px);
+  }
+  
+  .christmas-bubble:last-of-type {
+    bottom: 109px;
+    right: -14%;
   }
 }
