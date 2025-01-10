@@ -137,7 +137,6 @@ input:focus {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
-  width: fit-content;
   justify-self: center;
 }
 
@@ -357,7 +356,6 @@ input:focus {
 /* Start Giving */
 .givings {
   gap: 8rem;
-  width: fit-content;
   justify-self: center;
 }
 
