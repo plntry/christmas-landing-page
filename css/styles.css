@@ -56,6 +56,7 @@ ul {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 svg {
@@ -151,6 +152,7 @@ input:focus {
 
 .card img {
   max-width: 120px;
+  height: auto;
 }
 
 .card p {
@@ -277,6 +279,7 @@ input:focus {
   top: 0;
   left: 0;
   max-width: 100px;
+  height: auto;
 }
 .navbar .mobile-menu button {
   position: absolute;
@@ -331,6 +334,7 @@ input:focus {
 
 .hero img {
   max-width: 500px;
+  height: auto;
 }
 
 .hero p {
@@ -405,6 +409,7 @@ input:focus {
 
 .send-wishes img {
   max-width: 450px;
+  height: auto;
 }
 
 .send-wishes .btn {
@@ -500,6 +505,7 @@ input:focus {
 
 .new-gift .new-gift-image img {
   max-width: 150px;
+  height: auto;
   z-index: 2;
 }
 
@@ -716,7 +722,7 @@ input:focus {
 .send-wishes-form img {
   transform: rotate(15deg);
   max-width: 320px;
-  height: fit-content;
+  height: auto;
 }
 
 /* Footer */
@@ -784,7 +790,7 @@ input:focus {
 
 .footer a img {
   width: 100px;
-  height: fit-content;
+  height: auto;
 }
 
 /* Christmas Bubbles */
