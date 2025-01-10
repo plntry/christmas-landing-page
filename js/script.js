@@ -1,10 +1,78 @@
+// CSS variables for light / dark mode
+const cssVariables = {
+  // Body
+  "--body-color": {
+    light: "#ffffff",
+    dark: "#251819",
+  },
+  "--body-color-scroll": {
+    light: "rgba(255, 255, 255, 0.7)",
+    dark: "rgba(37, 24, 25, 0.7)",
+  },
+
+  // Container
+  "--container-color": {
+    light: "#ffffff",
+    dark: "#2f2223",
+  },
+
+  // Text
+  "--title-color": {
+    light: "#282525",
+    dark: "#f3f2f2",
+  },
+  "--text-color": {
+    light: "#5d5656",
+    dark: "#c2bdbd",
+  },
+  "--text-color-light": {
+    light: "#918889",
+    dark: "#918889",
+  },
+
+  // Button
+  "--primary-color-btn": {
+    light: "#dc3845",
+    dark: "#dc3845",
+  },
+  "--hover-primary-color-btn": {
+    light: "#db4d59",
+    dark: "#d42b39",
+  },
+  "--secondary-color-btn": {
+    light: "#000000",
+    dark: "#dc3845",
+  },
+  "--hover-secondary-color-btn": {
+    light: "#282525",
+    dark: "#d42b39",
+  },
+
+  // Form
+  "--form-color": {
+    light: "#dc3845",
+    dark: "#2f2223",
+  },
+};
+
+// Helpers
 function toggleMobileMenu() {
   const mobileMenu = document.querySelector(".navbar .mobile-menu-items");
   mobileMenu.classList.toggle("active");
 }
 
+function updateCSSVariables(theme = "light") {
+  for (const variableName in cssVariables) {
+    document.documentElement.style.setProperty(
+      variableName,
+      cssVariables[variableName][theme]
+    );
+  }
+}
+
+// Main Code
 document.addEventListener("DOMContentLoaded", function () {
-  // toggle mobile menu
+  // Toggle mobile menu
   const navbarToggleButton = document.querySelector(
     ".navbar .mobile-menu-toggle"
   );
@@ -15,7 +83,18 @@ document.addEventListener("DOMContentLoaded", function () {
   navbarToggleButton.addEventListener("click", () => toggleMobileMenu());
   mobileMenuCloseButton.addEventListener("click", () => toggleMobileMenu());
 
-  // toggle like icon
+  // Toggle theme icon & update css variables
+  const toggleTheme = document.querySelector(".toggle-theme");
+
+  toggleTheme.addEventListener("click", () => {
+    if (toggleTheme.classList.toggle("dark")) {
+      updateCSSVariables("dark");
+    } else {
+      updateCSSVariables("light");
+    }
+  });
+
+  // Toggle like icon
   const giftLikes = document.querySelectorAll(".gift-like");
 
   giftLikes.forEach((giftLike) => {
@@ -25,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// change navbar background on scroll
+// Change navbar background on scroll
 window.addEventListener("scroll", () => {
   const navbar = document.querySelector(".navbar");
 

@@ -13,6 +13,7 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   scroll-behavior: smooth;
+  transition: all 0.2s;
 }
 
 h1 {
@@ -90,12 +91,23 @@ main {
   padding-bottom: 2rem;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
 .btn {
   cursor: pointer;
   display: inline-block;
   padding: 1.25rem 3.5rem;
   width: fit-content;
-  background-color: var(--primary-color);
+  background-color: var(--primary-color-btn);
   color: var(--default-white);
   font-weight: 500;
   box-shadow: var(--box-shadow-btn);
@@ -104,15 +116,15 @@ main {
 }
 
 .btn:hover {
-  background-color: var(--primary-color-dark);
+  background-color: var(--hover-primary-color-btn);
 }
 
 .btn.btn-dark {
-  background-color: var(--title-color);
+  background-color: var(--secondary-color-btn);
 }
 
 .btn.btn-dark:hover {
-  background-color: var(--default-black);
+  background-color: var(--hover-secondary-color-btn);
 }
 
 /* Section Header */
@@ -203,10 +215,16 @@ main {
 
 .navbar a {
   color: var(--title-color);
+  transition: all 0.3s ease;
+}
+
+.navbar svg path {
+  fill: var(--title-color);
 }
 
 .navbar .main-menu-list-item.active a,
-.navbar .mobile-menu-list-item.active a {
+.navbar .mobile-menu-list-item.active a,
+.navbar a:hover {
   color: var(--primary-color);
 }
 
@@ -215,6 +233,32 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Toggle Theme */
+.toggle-theme {
+  cursor: pointer;
+  position: relative;
+}
+
+.toggle-theme .enable-dark-theme-btn,
+.toggle-theme .enable-light-theme-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle-theme .enable-dark-theme-btn,
+.toggle-theme.dark .enable-light-theme-btn {
+  z-index: 2;
+  opacity: 1;
+}
+
+.toggle-theme .enable-light-theme-btn,
+.toggle-theme.dark .enable-dark-theme-btn {
+  z-index: 1;
+  opacity: 0;
 }
 
 /* Mobile Menu */
@@ -402,24 +446,16 @@ main {
   transform: translate(-50%, -50%);
 }
 
-.gift-like .gift-liked {
-  z-index: 1;
-  opacity: 0;
-}
-
-.gift-like .gift-disliked {
-  z-index: 2;
-  opacity: 1;
-}
-
-.gift-like.liked .gift-liked {
-  z-index: 2;
-  opacity: 1;
-}
-
+.gift-like .gift-liked,
 .gift-like.liked .gift-disliked {
   z-index: 1;
   opacity: 0;
+}
+
+.gift-like .gift-disliked,
+.gift-like.liked .gift-liked {
+  z-index: 2;
+  opacity: 1;
 }
 
 /* New Gifts Slider */
@@ -536,7 +572,7 @@ main {
 
 #new-gifts-slider .dots-navigation label {
   cursor: pointer;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .dots-navigation .dot {
@@ -630,7 +666,7 @@ main {
 .send-wishes-form .send-wishes-form-flex {
   display: flex;
   justify-content: space-between;
-  background: var(--primary-color);
+  background: var(--form-color);
   border-radius: 32px;
   margin: 4.5rem auto 75px;
   padding: 50px 152px;
@@ -662,7 +698,7 @@ main {
   background-color: var(--body-color);
   border-radius: 4rem;
   padding: 18px 24px;
-  color: var(--default-black);
+  color: var(--text-color);
   min-width: 264px;
 }
 
@@ -738,7 +774,7 @@ main {
 }
 
 .footer a:hover {
-  color: var(--default-black);
+  color: var(--text-color-light);
 }
 
 .footer a:has(img) {
@@ -778,12 +814,8 @@ main {
   --body-color-scroll: rgba(255, 255, 255, 0.7);
   --container-color: #ffffff;
 
-  --dark-theme-body-color: #251819;
-  --dark-theme-container-color: #2f2223;
-
   /* Text color */
   --default-white: #ffffff;
-  --default-black: #000000;
 
   --title-color: #282525;
   --text-color: #5d5656;
@@ -792,6 +824,15 @@ main {
   --dark-theme-title-color: #f3f2f2;
   --dark-theme-text-color: #c2bdbd;
   --dark-theme-text-color-light: #918889;
+  
+  /* Button Colors */
+  --primary-color-btn: var(--primary-color);
+  --hover-primary-color-btn: var(--primary-color-light);
+  --secondary-color-btn: #000000;
+  --hover-secondary-color-btn: var(--title-color);
+
+  /* Form Color */
+  --form-color: var(--primary-color);
 
   /* Slider Dots */
   --dot-color: rgba(93, 86, 86, 0.5);
