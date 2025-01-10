@@ -14,6 +14,7 @@ body {
   line-height: 1.6;
   scroll-behavior: smooth;
   transition: all 0.2s;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -78,10 +79,6 @@ input,
 input:focus {
   border: none;
   outline: none;
-}
-
-main {
-  margin: 0 1.5rem;
 }
 
 /* Utility Classes */
@@ -164,6 +161,10 @@ main {
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+.main {
+  margin: 0 1.5rem;
 }
 
 /* Navbar */
@@ -722,7 +723,7 @@ main {
 .footer .footer-flex {
   position: relative;
   padding: 0 100px 2rem;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .footer .footer-content {
@@ -951,7 +952,7 @@ main {
   /* Christmas Bubbles */
   .christmas-bubble:last-of-type {
     bottom: 3%;
-    right: -6%;
+    right: 3%;
   }
 }
 
@@ -1044,11 +1045,6 @@ main {
   .christmas-bubble:first-of-type {
     bottom: 183px;
     left: calc(100% - 280px);
-  }
-  
-  .christmas-bubble:last-of-type {
-    bottom: 3%;
-    right: -6%;
   }
 }
 
@@ -1149,6 +1145,10 @@ main {
     bottom: 310px;
     left: calc(100% - 280px);
   }
+
+  .christmas-bubble:last-of-type { 
+    bottom: 12%;
+  }
 }
 
 @media (max-width: 386px) {
@@ -1160,6 +1160,6 @@ main {
   
   .christmas-bubble:last-of-type {
     bottom: 109px;
-    right: -14%;
+    right: -20%;
   }
 }
