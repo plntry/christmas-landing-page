@@ -269,6 +269,10 @@ input:focus {
   display: none;
 }
 
+.navbar .mobile-menu a:hover {
+  color: var(--primary-color);
+}
+
 .navbar .mobile-menu {
   display: none;
 }
