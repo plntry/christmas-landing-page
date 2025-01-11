@@ -222,6 +222,11 @@ input:focus {
 
 .navbar svg path {
   fill: var(--title-color);
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover svg path {
+  fill: var(--primary-color);
 }
 
 .navbar .main-menu-list-item.active a,
