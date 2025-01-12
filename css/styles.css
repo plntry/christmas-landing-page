@@ -17,7 +17,6 @@ body {
   overflow-x: hidden;
 
   /* Scrollbar For Firefox */
-  scrollbar-width: thin;
   scrollbar-color: var(--primary-color) none;
 }
 
