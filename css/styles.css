@@ -220,7 +220,7 @@ input:focus {
   transition: all 0.3s ease;
 }
 
-.navbar svg path {
+.navbar a svg path {
   fill: var(--title-color);
   transition: all 0.3s ease;
 }
@@ -291,14 +291,18 @@ input:focus {
 }
 .navbar .mobile-menu button {
   position: absolute;
-  top: 24.34px;
-  right: 30.39px;
+  top: 18px;
+  right: 24px;
   cursor: pointer;
 }
 
 .navbar .mobile-menu svg {
-  width: 11.31px;
-  height: 11.31px;
+  width: 24px;
+  height: 24px;
+}
+
+.navbar .mobile-menu svg path {
+  fill: var(--title-color);
 }
 
 .navbar .mobile-menu-items {
