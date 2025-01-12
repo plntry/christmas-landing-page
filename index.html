@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Christmas</title>
     <link rel="icon" href="images/logo.png" />
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -18,6 +20,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- SwiperJS CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- Main Styles -->
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
@@ -51,8 +59,9 @@
               role="button"
               aria-label="Toggle Theme Change - Dark"
               ><svg xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.285 9.8708C15.7203 10.0208 15.1385 10.0967 14.5542 10.0966C12.775 10.0966 11.1042 9.40497 9.84919 8.14997C9.02506 7.32109 8.43258 6.29069 8.13079 5.16146C7.829 4.03224 7.82845 2.84364 8.12919 1.71414C8.16675 1.57291 8.16651 1.4243 8.1285 1.2832C8.09049 1.14209 8.01604 1.01347 7.91262 0.910223C7.80921 0.806976 7.68046 0.732739 7.5393 0.694958C7.39814 0.657178 7.24952 0.657182 7.10836 0.69497C5.69432 1.07179 4.40424 1.81382 3.36752 2.84664C0.119191 6.09497 0.119191 11.3825 3.36752 14.6325C4.13963 15.4089 5.05805 16.0245 6.06964 16.4436C7.08123 16.8627 8.16589 17.077 9.26086 17.0741C10.3555 17.0772 11.4399 16.8631 12.4513 16.4441C13.4626 16.0251 14.3807 15.4096 15.1525 14.6333C16.1861 13.5964 16.9285 12.3056 17.305 10.8908C17.3424 10.7496 17.3421 10.6011 17.3041 10.4601C17.2661 10.3191 17.1918 10.1906 17.0885 10.0873C16.9853 9.98404 16.8567 9.90969 16.7157 9.8717C16.5747 9.83371 16.4262 9.8334 16.285 9.8708ZM13.975 13.455C13.3575 14.0759 12.623 14.5682 11.8139 14.9033C11.0049 15.2385 10.1374 15.4098 9.26169 15.4075C8.38568 15.4096 7.51794 15.2381 6.70863 14.9029C5.89932 14.5676 5.16451 14.0752 4.54669 13.4541C1.94836 10.855 1.94836 6.62497 4.54669 4.0258C5.04878 3.52428 5.62844 3.10698 6.26336 2.78997C6.17042 3.98919 6.33748 5.19433 6.75313 6.32304C7.16877 7.45176 7.8232 8.47743 8.67169 9.32997C9.52236 10.1811 10.5477 10.8374 11.6769 11.2533C12.8061 11.6693 14.0122 11.835 15.2117 11.7391C14.893 12.373 14.4755 12.9521 13.975 13.455Z"/>
-                </svg>
+                <path
+                  d="M16.285 9.8708C15.7203 10.0208 15.1385 10.0967 14.5542 10.0966C12.775 10.0966 11.1042 9.40497 9.84919 8.14997C9.02506 7.32109 8.43258 6.29069 8.13079 5.16146C7.829 4.03224 7.82845 2.84364 8.12919 1.71414C8.16675 1.57291 8.16651 1.4243 8.1285 1.2832C8.09049 1.14209 8.01604 1.01347 7.91262 0.910223C7.80921 0.806976 7.68046 0.732739 7.5393 0.694958C7.39814 0.657178 7.24952 0.657182 7.10836 0.69497C5.69432 1.07179 4.40424 1.81382 3.36752 2.84664C0.119191 6.09497 0.119191 11.3825 3.36752 14.6325C4.13963 15.4089 5.05805 16.0245 6.06964 16.4436C7.08123 16.8627 8.16589 17.077 9.26086 17.0741C10.3555 17.0772 11.4399 16.8631 12.4513 16.4441C13.4626 16.0251 14.3807 15.4096 15.1525 14.6333C16.1861 13.5964 16.9285 12.3056 17.305 10.8908C17.3424 10.7496 17.3421 10.6011 17.3041 10.4601C17.2661 10.3191 17.1918 10.1906 17.0885 10.0873C16.9853 9.98404 16.8567 9.90969 16.7157 9.8717C16.5747 9.83371 16.4262 9.8334 16.285 9.8708ZM13.975 13.455C13.3575 14.0759 12.623 14.5682 11.8139 14.9033C11.0049 15.2385 10.1374 15.4098 9.26169 15.4075C8.38568 15.4096 7.51794 15.2381 6.70863 14.9029C5.89932 14.5676 5.16451 14.0752 4.54669 13.4541C1.94836 10.855 1.94836 6.62497 4.54669 4.0258C5.04878 3.52428 5.62844 3.10698 6.26336 2.78997C6.17042 3.98919 6.33748 5.19433 6.75313 6.32304C7.16877 7.45176 7.8232 8.47743 8.67169 9.32997C9.52236 10.1811 10.5477 10.8374 11.6769 11.2533C12.8061 11.6693 14.0122 11.835 15.2117 11.7391C14.893 12.373 14.4755 12.9521 13.975 13.455Z"
+                />
               </svg>
             </a>
             <a
@@ -60,7 +69,9 @@
               role="button"
               aria-label="Toggle Theme Change - Light"
               ><svg xmlns="http://www.w3.org/2000/svg">
-                <path d="M4.8275 9.00002C4.8275 11.3009 6.69917 13.1725 9 13.1725C11.3008 13.1725 13.1725 11.3009 13.1725 9.00002C13.1725 6.69919 11.3008 4.82752 9 4.82752C6.69917 4.82752 4.8275 6.69919 4.8275 9.00002ZM9 6.49419C10.3817 6.49419 11.5058 7.61835 11.5058 9.00002C11.5058 10.3817 10.3817 11.5059 9 11.5059C7.61833 11.5059 6.49417 10.3817 6.49417 9.00002C6.49417 7.61835 7.61833 6.49419 9 6.49419ZM8.165 14.8334H9.83167V17.3334H8.165V14.8334ZM8.165 0.666687H9.83167V3.16669H8.165V0.666687ZM0.664999 8.16669H3.165V9.83335H0.664999V8.16669ZM14.8317 8.16669H17.3317V9.83335H14.8317V8.16669ZM2.51583 14.3025L4.2825 12.5342L5.46167 13.7125L3.695 15.4809L2.51583 14.3025ZM12.5333 4.28669L14.3017 2.51835L15.48 3.69669L13.7117 5.46502L12.5333 4.28669ZM4.285 5.46585L2.51667 3.69752L3.69583 2.51919L5.4625 4.28752L4.285 5.46585ZM15.48 14.3034L14.3017 15.4817L12.5333 13.7134L13.7117 12.535L15.48 14.3034Z"/>
+                <path
+                  d="M4.8275 9.00002C4.8275 11.3009 6.69917 13.1725 9 13.1725C11.3008 13.1725 13.1725 11.3009 13.1725 9.00002C13.1725 6.69919 11.3008 4.82752 9 4.82752C6.69917 4.82752 4.8275 6.69919 4.8275 9.00002ZM9 6.49419C10.3817 6.49419 11.5058 7.61835 11.5058 9.00002C11.5058 10.3817 10.3817 11.5059 9 11.5059C7.61833 11.5059 6.49417 10.3817 6.49417 9.00002C6.49417 7.61835 7.61833 6.49419 9 6.49419ZM8.165 14.8334H9.83167V17.3334H8.165V14.8334ZM8.165 0.666687H9.83167V3.16669H8.165V0.666687ZM0.664999 8.16669H3.165V9.83335H0.664999V8.16669ZM14.8317 8.16669H17.3317V9.83335H14.8317V8.16669ZM2.51583 14.3025L4.2825 12.5342L5.46167 13.7125L3.695 15.4809L2.51583 14.3025ZM12.5333 4.28669L14.3017 2.51835L15.48 3.69669L13.7117 5.46502L12.5333 4.28669ZM4.285 5.46585L2.51667 3.69752L3.69583 2.51919L5.4625 4.28752L4.285 5.46585ZM15.48 14.3034L14.3017 15.4817L12.5333 13.7134L13.7117 12.535L15.48 14.3034Z"
+                />
               </svg>
             </a>
           </div>
@@ -281,19 +292,14 @@
       </section>
 
       <!-- New Gifts Slider Section -->
-      <section class="new-gifts-slider">
-        <div class="container">
-          <div class="section-header">
-            <h2>New Gifts</h2>
-          </div>
-          <div id="new-gifts-slider" class="new-gifts cards">
-            <input type="radio" name="slider" id="s1" checked />
-            <input type="radio" name="slider" id="s2" />
-            <input type="radio" name="slider" id="s3" />
-            <input type="radio" name="slider" id="s4" />
-
-            <label for="s1" id="slide1">
-              <div class="new-gift card">
+      <section class="new-gifts-swiper">
+        <div class="section-header">
+          <h2>New Gifts</h2>
+        </div>
+        <div class="container swiper">
+          <div class="card-wrapper">
+            <ul class="new-gifts swiper-wrapper">
+              <li class="card new-gift swiper-slide">
                 <div class="new-gift-image card-image">
                   <img src="images/new-gift1.png" alt="Reindeer" />
                   <div class="new-gift-img-background"></div>
@@ -312,10 +318,8 @@
                   ></i>
                   <i class="new-gift-liked gift-liked fa-solid fa-heart"></i>
                 </div>
-              </div>
-            </label>
-            <label for="s2" id="slide2">
-              <div class="new-gift card">
+              </li>
+              <li class="card new-gift swiper-slide">
                 <div class="new-gift-image card-image">
                   <img src="images/new-gift2.png" alt="Snow Globe" />
                   <div class="new-gift-img-background"></div>
@@ -334,10 +338,8 @@
                   ></i>
                   <i class="new-gift-liked gift-liked fa-solid fa-heart"></i>
                 </div>
-              </div>
-            </label>
-            <label for="s3" id="slide3">
-              <div class="new-gift card">
+              </li>
+              <li class="card new-gift swiper-slide">
                 <div class="new-gift-image card-image">
                   <img src="images/new-gift3.png" alt="Sledge" />
                   <div class="new-gift-img-background"></div>
@@ -356,10 +358,8 @@
                   ></i>
                   <i class="new-gift-liked gift-liked fa-solid fa-heart"></i>
                 </div>
-              </div>
-            </label>
-            <label for="s4" id="slide4">
-              <div class="new-gift card">
+              </li>
+              <li class="card new-gift swiper-slide">
                 <div class="new-gift-image card-image">
                   <img src="images/new-gift4.png" alt="Christmas Wreath" />
                   <div class="new-gift-img-background"></div>
@@ -378,13 +378,9 @@
                   ></i>
                   <i class="new-gift-liked gift-liked fa-solid fa-heart"></i>
                 </div>
-              </div>
-            </label>
-            <div class="dots-navigation">
-              <label for="s1" class="dot"></label>
-              <label for="s2" class="dot"></label>
-              <label for="s4" class="dot"></label>
-            </div>
+              </li>
+            </ul>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </section>
@@ -468,10 +464,13 @@
             src="images/christmas-bubble2.png"
             alt="Red Christmas Bubble"
           />
-        </div>        
+        </div>
       </footer>
     </main>
 
+    <!-- SwiperJS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Main Script -->
     <script src="js/script.js"></script>
   </body>
 </html>

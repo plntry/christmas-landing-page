@@ -114,3 +114,40 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("navbar-scroll");
   }
 });
+
+// SwiperJS initialization
+const swiper = new Swiper('.card-wrapper', {
+  direction: 'horizontal',
+  loop: true,
+  centeredSlides: true,
+  setWrapperSize: true,
+
+  autoplay: {
+    delay: 4000
+  },
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    dynamicBullets: true,
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 3,
+      spaceBetween: 24,
+    },
+    576: {
+      slidesPerView: 3,
+      spaceBetween: 24,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 64,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 64,
+    },
+  }
+});

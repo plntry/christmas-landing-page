@@ -96,7 +96,7 @@ input:focus {
   margin: -1px;
   padding: 0;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   border: 0;
 }
 
@@ -140,7 +140,7 @@ input:focus {
   justify-self: center;
 }
 
-.cards .card {
+.card {
   display: flex;
   flex-direction: column;
   background: var(--container-color);
@@ -453,6 +453,7 @@ input:focus {
 
 .gift-like .gift-liked,
 .gift-like .gift-disliked {
+  cursor: pointer;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -471,33 +472,29 @@ input:focus {
   opacity: 1;
 }
 
-/* New Gifts Slider */
-#new-gifts-slider {
+/* New Gifts Swiper */
+.new-gifts-swiper {
   position: relative;
   display: flex;
+  flex-direction: column;
+}
+
+.new-gifts-swiper > .container {
+  width: 818px;
+  display: flex;
   justify-content: center;
-  background-color: #251819;
+  position: relative;
 }
 
-#new-gifts-slider > label {
-  position: absolute;
-  cursor: pointer;
-  transition: transform 0.4s ease;
-}
-
-.new-gifts-slider > .container {
-  height: 510px;
-  overflow: hidden;
+.card-wrapper {
+  width: 100%;
 }
 
 .new-gifts .new-gift {
-  position: relative;
   max-height: 278px;
-  width: 230px;
   padding: 20px;
-  overflow: hidden;
   gap: 20px;
-  z-index: 3;
+  overflow: hidden;
 }
 
 .new-gift p {
@@ -530,125 +527,12 @@ input:focus {
   text-align: center;
 }
 
-/* 1st Card */
-#s1:checked ~ #slide4,
-#s2:checked ~ #slide1,
-#s3:checked ~ #slide2,
-#s4:checked ~ #slide3 {
-  transform: translateX(-120%);
-  z-index: 2;
-}
-
-/* 2nd Card */
-#s1:checked ~ #slide1,
-#s2:checked ~ #slide2,
-#s3:checked ~ #slide3,
-#s4:checked ~ #slide4 {
-  transform: translateX(0%);
-  z-index: 2;
-}
-
-/* 3rd Card */
-#s1:checked ~ #slide2,
-#s2:checked ~ #slide3,
-#s3:checked ~ #slide4,
-#s4:checked ~ #slide1 {
-  transform: translateX(120%);
-  z-index: 2;
-}
-
-/* 4th Card */
-#s1:checked ~ #slide3,
-#s2:checked ~ #slide4,
-#s3:checked ~ #slide1,
-#s4:checked ~ #slide2 {
-  transform: translateX(240%);
-  z-index: 2;
-  visibility: hidden;
-  width: 0;
-  height: 0;
-}
-
-#s1:checked ~ #slide4,
-#s2:checked ~ #slide4 {
-  z-index: 1;
-}
-
-/* Dots Navigation */
-.dots-navigation {
-  position: absolute;
-  bottom: -320px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-
-#new-gifts-slider .dots-navigation label {
-  cursor: pointer;
-  z-index: 100;
-}
-
-.dots-navigation .dot {
-  width: 3px;
-  height: 3px;
+/* New Gifts Swiper Bullets Pagination */
+.swiper-pagination-bullet {
   background-color: var(--dot-color);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-/* Active 1st dot */
-#s1:checked ~ .dots-navigation .dot:nth-child(1) {
-  width: 7px;
-  height: 7px;
-  background-color: var(--dot-active-color);
-}
-
-#s1:checked ~ .dots-navigation .dot:nth-child(2) {
-  width: 5px;
-  height: 5px;
-}
-
-#s1:checked ~ .dots-navigation .dot:nth-child(3) {
-  width: 3px;
-  height: 3px;
-}
-
-/* Active 2nd dot */
-#s2:checked ~ .dots-navigation .dot:nth-child(1),
-#s3:checked ~ .dots-navigation .dot:nth-child(1) {
-  width: 5px;
-  height: 5px;
-}
-
-#s2:checked ~ .dots-navigation .dot:nth-child(2),
-#s3:checked ~ .dots-navigation .dot:nth-child(2) {
-  width: 7px;
-  height: 7px;
-  background-color: var(--dot-active-color);
-}
-
-#s2:checked ~ .dots-navigation .dot:nth-child(3),
-#s3:checked ~ .dots-navigation .dot:nth-child(3) {
-  width: 5px;
-  height: 5px;
-}
-
-/* Active 3rd dot */
-#s4:checked ~ .dots-navigation .dot:nth-child(1) {
-  width: 3px;
-  height: 3px;
-}
-
-#s4:checked ~ .dots-navigation .dot:nth-child(2) {
-  width: 5px;
-  height: 5px;
-}
-
-#s4:checked ~ .dots-navigation .dot:nth-child(3) {
-  width: 7px;
-  height: 7px;
+.swiper-pagination-bullet-active {
   background-color: var(--dot-active-color);
 }
 
@@ -682,7 +566,7 @@ input:focus {
   justify-content: space-between;
   background: var(--form-color);
   border-radius: 32px;
-  margin: 4.5rem auto 75px;
+  margin: 5rem auto 75px;
   padding: 50px 152px;
 }
 
@@ -736,7 +620,6 @@ input:focus {
 .footer .footer-flex {
   position: relative;
   padding: 0 100px 2rem;
-  /* overflow: hidden; */
 }
 
 .footer .footer-content {
@@ -838,7 +721,7 @@ input:focus {
   --dark-theme-title-color: #f3f2f2;
   --dark-theme-text-color: #c2bdbd;
   --dark-theme-text-color-light: #918889;
-  
+
   /* Button Colors */
   --primary-color-btn: var(--primary-color);
   --hover-primary-color-btn: var(--primary-color-light);
@@ -849,7 +732,7 @@ input:focus {
   --form-color: var(--primary-color);
 
   /* Slider Dots */
-  --dot-color: rgba(93, 86, 86, 0.5);
+  --dot-color: #5d5656;
   --dot-active-color: #dc3845;
 
   /* Text size */
@@ -920,9 +803,25 @@ input:focus {
     max-width: 280px;
   }
 
+  /* New Gifts Swiper */
+  .new-gifts-swiper {
+    height: 500px;
+  }
+
+  .new-gifts-swiper > .container {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -85%);
+  }
+
+  .card-wrapper {
+    max-width: 95%;
+  }
+
   /* Send Wishes Form */
   .send-wishes-form .send-wishes-form-flex {
-    margin: 1rem auto 32px;
+    margin: 4rem auto 32px;
     padding: 2.5rem 1.5rem;
     border-radius: 20px;
     justify-content: space-around;
@@ -1014,11 +913,17 @@ input:focus {
     text-align: center;
   }
 
+  /* New Gifts Swiper */
+  .card-wrapper {
+    max-width: 95%;
+    width: 660px;
+  }
+
   /* Send Wishes Form */
   .send-wishes-form .send-wishes-form-flex {
     flex-direction: column;
     justify-content: center;
-    margin: 1rem auto 0;
+    margin: 4rem auto 0;
     padding: 2.5rem 1.5rem;
     border-radius: 20px;
   }
@@ -1054,7 +959,7 @@ input:focus {
   .christmas-bubble {
     width: 100px;
   }
-  
+
   .christmas-bubble:first-of-type {
     bottom: 183px;
     left: calc(100% - 280px);
@@ -1124,33 +1029,15 @@ input:focus {
     gap: 4px;
   }
 
-  /* New Gifts Slider */
-  #s1:checked ~ #slide4,
-  #s2:checked ~ #slide1,
-  #s3:checked ~ #slide2,
-  #s4:checked ~ #slide3 {
-    transform: translateX(-110%);
+  /* New Gifts Swiper */
+  .new-gifts-swiper {
+    height: 410px;
   }
 
-  #s1:checked ~ #slide1,
-  #s2:checked ~ #slide2,
-  #s3:checked ~ #slide3,
-  #s4:checked ~ #slide4 {
-    transform: translateX(0%);
-  }
-
-  #s1:checked ~ #slide2,
-  #s2:checked ~ #slide3,
-  #s3:checked ~ #slide4,
-  #s4:checked ~ #slide1 {
-    transform: translateX(110%);
-  }
-
-  #s1:checked ~ #slide3,
-  #s2:checked ~ #slide4,
-  #s3:checked ~ #slide1,
-  #s4:checked ~ #slide2 {
-    transform: translateX(230%);
+  .new-gifts-swiper > .container {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
   }
 
   /* Christmas Bubbles */
@@ -1159,18 +1046,18 @@ input:focus {
     left: calc(100% - 280px);
   }
 
-  .christmas-bubble:last-of-type { 
+  .christmas-bubble:last-of-type {
     bottom: 12%;
   }
 }
 
 @media (max-width: 386px) {
-  /* Christmas Bubbles */  
+  /* Christmas Bubbles */
   .christmas-bubble:first-of-type {
     bottom: 510px;
     left: calc(100% - 151px);
   }
-  
+
   .christmas-bubble:last-of-type {
     bottom: 109px;
     right: -20%;
