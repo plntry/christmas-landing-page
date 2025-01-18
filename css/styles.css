@@ -20,6 +20,12 @@ body {
   scrollbar-color: var(--primary-color) none;
 }
 
+/* Selection */
+::selection {
+  background-color: var(--primary-color);
+  color: var(--container-color);
+}
+
 /* Scrollbar For Webkit Browsers */
 ::-webkit-scrollbar {
   width: 12px;
