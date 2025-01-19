@@ -4,6 +4,14 @@ Welcome to the **Christmas Landing Page** project! This is a festive and interac
 
 ---
 
+## 🎨 Figma Design
+
+This project is based on a community Figma design. You can access the original design template here:
+
+👉 [**Figma Design Template**](https://www.figma.com/design/BewhguWRRl8J83Z3QbhEbQ/Design-in-Figma---Responsive-christmas-website-(Community)?node-id=0-1&p=f&t=5QckxyTGYIdmNKKg-0)
+
+---
+
 ## 🎁 Features
 
 - **Festive Design**: A vibrant and cheerful UI with Christmas-themed decorations.
